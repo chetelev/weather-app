@@ -120,6 +120,111 @@
           }
         }
       }
+    },
+    "bootstrap": {
+      "projectType": "library",
+      "root": "projects/bootstrap",
+      "sourceRoot": "projects/bootstrap/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/bootstrap/tsconfig.lib.json",
+            "project": "projects/bootstrap/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/bootstrap/src/test.ts",
+            "tsConfig": "projects/bootstrap/tsconfig.spec.json",
+            "karmaConfig": "projects/bootstrap/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/bootstrap/tsconfig.lib.json",
+              "projects/bootstrap/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ngbootstrap": {
+      "projectType": "library",
+      "root": "projects/ngbootstrap",
+      "sourceRoot": "projects/ngbootstrap/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngbootstrap/tsconfig.lib.json",
+            "project": "projects/ngbootstrap/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngbootstrap/src/test.ts",
+            "tsConfig": "projects/ngbootstrap/tsconfig.spec.json",
+            "karmaConfig": "projects/ngbootstrap/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngbootstrap/tsconfig.lib.json",
+              "projects/ngbootstrap/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "bstrap": {
+      "projectType": "library",
+      "root": "projects/bstrap",
+      "sourceRoot": "projects/bstrap/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/bstrap/tsconfig.lib.json",
+            "project": "projects/bstrap/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/bstrap/src/test.ts",
+            "tsConfig": "projects/bstrap/tsconfig.spec.json",
+            "karmaConfig": "projects/bstrap/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/bstrap/tsconfig.lib.json",
+              "projects/bstrap/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "weather-app"
 }

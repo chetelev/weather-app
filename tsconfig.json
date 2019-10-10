@@ -17,7 +17,27 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "bootstrap": [
+        "dist/bootstrap"
+      ],
+      "bootstrap/*": [
+        "dist/bootstrap/*"
+      ],
+      "ngbootstrap": [
+        "dist/ngbootstrap"
+      ],
+      "ngbootstrap/*": [
+        "dist/ngbootstrap/*"
+      ],
+      "bstrap": [
+        "dist/bstrap"
+      ],
+      "bstrap/*": [
+        "dist/bstrap/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
