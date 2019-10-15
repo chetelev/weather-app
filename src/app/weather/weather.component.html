@@ -1,10 +1,28 @@
-<div class="container" [ngStyle]="{'background-image': 'url('+ bgImg+')'}">
+<div class="container table-active" *ngIf="geoCityData">
+
   <div class="row">
-    <div class="col-sm-3" *ngFor="let x of cities">
-      <div class="card-body">
+    <div class="col-sm-3 table-primary" *ngFor="let x of cities">
+      <div class="">
         <img src="{{x.url}}" alt="city" class="img-thumbnail img-fluid">
-        <h6 class="display-4 text-white-50">{{x.name}}</h6>
-        <h5 class="text-xl-center text-white">{{x.temperature}} &#8451;</h5>
+        <h6 class="display-4 text-black-50">{{x.name}}</h6>
+        <h5 class="text-center text-black">{{x.temperature}} &#8451;</h5>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <h1 class="display-2 text-center text-black-50 text-center d-inline font-weight-bold">{{geoCityData.name}}</h1>
+      <span>{{geoCityData.sys.country}}</span>
+      <span
+        class="display-3 d-block">{{geoCityData.main.temp}}<span class="text-black-50">&#8451;</span> </span>
+      <div class="alert-secondary table-bordered">
+        <span class="d-block display-4">Wind: <span
+          class="text-black-50 font-weight-bold">{{geoCityData.wind.deg}} </span>&#186;</span>
+        <span class="d-block display-4">Cloudiness: <span
+          class="text-black-50 font-weight-bold">{{geoCityData.weather[0].main}}</span></span>
+        <span class="d-block display-4">Humidity: <span
+          class="text-black-50 font-weight-bold">{{geoCityData.main.humidity}}</span></span>
       </div>
     </div>
   </div>

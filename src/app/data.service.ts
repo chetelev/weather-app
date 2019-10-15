@@ -13,6 +13,11 @@ export class DataService {
   constructor(private http: HttpClient) {
   }
 
+  getGeoCity(lat: string, lon: string): Observable<any> {
+    const apiCall = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${this.apiKey}`;
+    return this.http.get(apiCall);
+  }
+
   getCity(city): Observable<any> {
     const apiCall = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${this.apiKey}`;
     return this.http.get(apiCall);

@@ -3,9 +3,18 @@
   align-items: start;
 }
 
-img {
+.col-sm-3 img {
   border-radius: 70px;
   height: 120px;
   width: 200px;
 }
 
+.col-sm-3 h1 {
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.col-sm-3 h6 {
+  font-size: 24px;
+  font-weight: 600;
+}

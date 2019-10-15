@@ -5,11 +5,13 @@ import {AppComponent} from './app.component';
 import {WeatherComponent} from './weather/weather.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import { WeatherDetailsComponent } from './weather-details/weather-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WeatherComponent,
+    WeatherDetailsComponent,
   ],
   imports: [
     BrowserModule,
