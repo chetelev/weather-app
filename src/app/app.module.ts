@@ -8,6 +8,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ProfileEditorComponent} from './weather/profile-editor/profile-editor.component';
 import { SharedComponent } from './shared/shared.component';
 import { DetailsviewComponent } from './detailsview/detailsview.component';
+import { AppRoutingModule } from './app-routing.module';
+import { GeoCityComponent } from './geo-city/geo-city.component';
 
 
 @NgModule({
@@ -17,12 +19,14 @@ import { DetailsviewComponent } from './detailsview/detailsview.component';
     ProfileEditorComponent,
     SharedComponent,
     DetailsviewComponent,
+    GeoCityComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

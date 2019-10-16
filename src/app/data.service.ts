@@ -13,6 +13,7 @@ export class DataService {
   constructor(private http: HttpClient) {
   }
 
+
   getGeoCity(lat: string, lon: string): Observable<any> {
     const apiCall = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${this.apiKey}`;
     return this.http.get(apiCall);
@@ -27,4 +28,16 @@ export class DataService {
     const imgCall = `https://pixabay.com/api?key=${this.imgKey}&q=${city}`;
     return this.http.get(imgCall);
   }
+
+  getPosition(): Promise<any> {
+    return new Promise((resolve, reject) => {
+      navigator.geolocation.getCurrentPosition(resp => {
+          resolve({lng: resp.coords.longitude, lat: resp.coords.latitude});
+        },
+        err => {
+          reject(err);
+        });
+    });
+  }
+
 }
