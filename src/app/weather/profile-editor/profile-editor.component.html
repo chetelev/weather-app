@@ -1,0 +1,9 @@
+<div class="container pt-4">
+  <form [formGroup]="profileForm" class="form-group">
+    <label class=" text-black-50 text-uppercase">
+      Search City:
+      <input type="text" formControlName="searchCity">
+      <button type="submit" [disabled]="!profileForm.valid">Search</button>
+    </label>
+  </form>
+</div>

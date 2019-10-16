@@ -27,5 +27,4 @@ export class DataService {
     const imgCall = `https://pixabay.com/api?key=${this.imgKey}&q=${city}`;
     return this.http.get(imgCall);
   }
-
 }
