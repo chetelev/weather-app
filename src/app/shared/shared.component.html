@@ -1,9 +1,14 @@
-<div class="row">
-  <div class="col-sm-3" *ngFor="let x of cities">
-    <div>
-      <img src="{{x.url}}" alt="city" class="img-fluid">
-      <a class="display-4 text-black-50" routerLink="details/{{x.name}}">{{x.name}}</a>
-      <h5 class="text-center text-black">{{x.temperature}} &#8451;</h5>
+<div class="row" id="header">
+  <div class="col-md-3" *ngFor="let city of cities">
+    <div class="row">
+      <div class="col-md-8">
+        <img src="{{city.url}}" alt="city">
+      </div>
+      <div class="col-md-4">
+        <a class="d-block" routerLink="details/{{city.name}}">{{city.name}}</a>
+        <span class="d-block text-uppercase">{{city.weather}}</span>
+        <span class="d-block">{{city.temperature | number:'1.0-0'}} &#8451;</span>
+      </div>
     </div>
   </div>
 </div>

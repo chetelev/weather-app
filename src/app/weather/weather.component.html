@@ -1,8 +1,6 @@
-<div class="container badge-light" *ngIf="geoCityData && cities && geoCityImgUrl">
+<div class="container" *ngIf="geoCityData && cities && geoCityImgUrl">
   <app-shared></app-shared>
-
   <div class="row ">
-
     <div class="col-sm-6 ">
       <a routerLink="details/{{geoCityData.name}}"
          class="display-2 text-decoration-none d-inline text-primary">{{geoCityData.name}}</a>
@@ -10,14 +8,7 @@
       <span
         class="display-3 d-block">{{geoCityData.main.temp | number:'1.0-0'}}<span class="text-black-50">&#8451;</span> </span>
     </div>
-
-    <div class="col-sm-6 ">
-      <img src="{{geoCityImgUrl}}" alt="city-img" class="img-fluid h-100">
-    </div>
-
   </div>
-
 </div>
-
 <app-profile-editor></app-profile-editor>
 

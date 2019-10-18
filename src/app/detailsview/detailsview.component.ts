@@ -27,7 +27,9 @@ export class DetailsviewComponent implements OnInit {
       this.dataService.getCity(city)
         .subscribe((value) => {
           this.data = value;
-          this.dataService.getImage(value.city.name).subscribe(val => this.imageUrl = val.hits[0].webformatURL);
+          this.dataService.getImage(value.city.name).subscribe((val) => {
+            this.imageUrl = val.hits[0].webformatURL;
+          });
         });
     }
   }
