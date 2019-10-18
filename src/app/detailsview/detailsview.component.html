@@ -1,1 +1,19 @@
-<p>detailsview works!</p>
+<div class="container badge-light" *ngIf="data"
+     [ngStyle]="{'background-image': 'url()'}">
+  <h1 class="display-1">{{data.city.name}} {{data.list[0].main.temp | number:'1.0-0'}}</h1>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="">
+        <span class="d-block display-4">Wind: <span
+          class="text-black-50 font-weight-bold">{{data.list[0].wind.deg | number:'1.0-0'}} </span></span>
+        <span class="d-block display-4">Cloudiness: <span
+          class="text-black-50 font-weight-bold">{{data.list[0].weather[0].main}}</span></span>
+        <span class="d-block display-4">Humidity: <span
+          class="text-black-50 font-weight-bold">{{data.list[0].main.humidity}}</span></span>
+      </div>
+    </div>
+    <div class="col-sm-6 ">
+      <img src="{{imageUrl}}" alt="city-img" class="img-fluid w-100 h-100">
+    </div>
+  </div>
+</div>

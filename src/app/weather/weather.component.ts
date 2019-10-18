@@ -18,7 +18,6 @@ export class WeatherComponent implements OnInit {
 
   ngOnInit() {
     this.adaptPosition();
-    this.getImages();
   }
 
   adaptPosition() {
@@ -27,17 +26,19 @@ export class WeatherComponent implements OnInit {
         this.dataService.getGeoCity(pos.lat, pos.lng)
           .subscribe((val) => {
             this.geoCityData = val;
+            this.getImages();
           });
       });
   }
 
   getImages(): void {
-    this.dataService.getImage('london').subscribe(val => this.cities[0].url = val.hits[16].webformatURL);
-    this.dataService.getImage('berlin').subscribe(val => this.cities[1].url = val.hits[1].webformatURL);
-    this.dataService.getImage('paris').subscribe(val => this.cities[2].url = val.hits[5].webformatURL);
-    this.dataService.getImage('madrid').subscribe(val => this.cities[3].url = val.hits[5].webformatURL);
-    setTimeout((x) => {
-      this.dataService.getImage(this.geoCityData.name).subscribe(val => this.geoCityImgUrl = val.hits[2].webformatURL);
-    }, 150);
+    this.dataService.getImage('london').subscribe(val => this.cities[0].url = val.hits[0].webformatURL);
+    this.dataService.getImage('berlin').subscribe(val => this.cities[1].url = val.hits[0].webformatURL);
+    this.dataService.getImage('paris').subscribe(val => this.cities[2].url = val.hits[0].webformatURL);
+    this.dataService.getImage('madrid').subscribe(val => this.cities[3].url = val.hits[0].webformatURL);
+    this.dataService.getImage(this.geoCityData.name).subscribe((val) => {
+      this.geoCityImgUrl = val.hits[2].webformatURL;
+
+    });
   }
 }

@@ -5,12 +5,11 @@ import {AppComponent} from './app.component';
 import {WeatherComponent} from './weather/weather.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {ProfileEditorComponent} from './weather/profile-editor/profile-editor.component';
-import { SharedComponent } from './shared/shared.component';
-import { DetailsviewComponent } from './detailsview/detailsview.component';
-import { AppRoutingModule } from './app-routing.module';
-import { GeoCityComponent } from './geo-city/geo-city.component';
-
+import {ProfileEditorComponent, CityService} from './weather/profile-editor/profile-editor.component';
+import {SharedComponent} from './shared/shared.component';
+import {DetailsviewComponent} from './detailsview/detailsview.component';
+import {AppRoutingModule} from './app-routing.module';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -19,7 +18,6 @@ import { GeoCityComponent } from './geo-city/geo-city.component';
     ProfileEditorComponent,
     SharedComponent,
     DetailsviewComponent,
-    GeoCityComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,8 +25,10 @@ import { GeoCityComponent } from './geo-city/geo-city.component';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    NgbModule,
+
   ],
-  providers: [],
+  providers: [CityService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
