@@ -1,5 +1,12 @@
 form {
   display: block;
   text-align: center;
+}
 
+form input {
+  display: inline !important;
+  height: auto;
+  width: 50%;
+  background: transparent;
+  color: white;
 }

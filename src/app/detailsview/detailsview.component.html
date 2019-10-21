@@ -1,19 +1,45 @@
-<div class="container badge-light" *ngIf="data"
-     [ngStyle]="{'background-image': 'url()'}">
-  <h1 class="display-1">{{data.city.name}} {{data.list[0].main.temp | number:'1.0-0'}}  &#8451;</h1>
+<div class="container" *ngIf="data" [ngStyle]="{'background-image': 'url(' + imageUrl + ')'}"
+     style="background-size: cover;background-position: center">
+  <h1 class="display-1 text-center">{{data.city.name}} {{data.list[0].main.temp | number:'1.0-0'}} &#8451;</h1>
   <div class="row">
-    <div class="col-sm-6">
-      <div class="">
-        <span class="d-block display-4">Wind: <span
-          class="text-black-50 font-weight-bold">{{data.list[0].wind.deg | number:'1.0-0'}} </span></span>
-        <span class="d-block display-4">Cloudiness: <span
-          class="text-black-50 font-weight-bold">{{data.list[0].weather[0].main}}</span></span>
-        <span class="d-block display-4">Humidity: <span
-          class="text-black-50 font-weight-bold">{{data.list[0].main.humidity}}</span></span>
+    <div class="col-md-6 align-items-start">
+      <div>
+        <h4 class="d-block display-4">Wind: <span
+          class="font-weight-bold">{{data.list[0].wind.deg | number:'1.0-0'}} </span></h4>
+        <h4 class="d-block display-4">Cloudiness: <span
+          class=" font-weight-bold">{{data.list[0].weather[0].main}}</span></h4>
+        <h4 class="d-block display-4">Humidity: <span
+          class=" font-weight-bold">{{data.list[0].main.humidity}}</span></h4>
       </div>
     </div>
-    <div class="col-sm-6 ">
-      <img src="{{imageUrl}}" alt="city-img" class="img-fluid w-100 h-100">
+    <div class="col-md-6 text-white">
+      <div class="row">
+        <div class="col-md-8">
+          {{data.list[8].dt_txt | date:'EEEE'}}
+          {{data.list[5].main.temp_min | number:'1.0-0'}}&#8451; {{data.list[8].main.temp_max | number:'1.0-0'}}&#8451;
+        </div>
+        <div class="col-md-4">
+          <img src="http://openweathermap.org/img/wn/{{data.list[8].weather[0].icon}}@2x.png" alt="">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          {{data.list[16].dt_txt | date:'EEEE'}}
+          {{data.list[13].main.temp_min | number:'1.0-0'}}&#8451;{{data.list[16].main.temp_max | number:'1.0-0'}}&#8451;
+        </div>
+        <div class="col-md-4">
+          <img src="http://openweathermap.org/img/wn/{{data.list[16].weather[0].icon}}@2x.png" alt="">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          {{data.list[24].dt_txt | date:'EEEE'}}
+          {{data.list[21].main.temp_min | number:'1.0-0'}}&#8451;{{data.list[24].main.temp_max | number:'1.0-0'}}&#8451;
+        </div>
+        <div class="col-md-4">
+          <img src="http://openweathermap.org/img/wn/{{data.list[24].weather[0].icon}}@2x.png" alt="">
+        </div>
+      </div>
     </div>
   </div>
 </div>

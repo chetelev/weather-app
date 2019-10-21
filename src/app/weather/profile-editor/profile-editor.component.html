@@ -1,11 +1,17 @@
 <div class="container pt-4">
-  <form [formGroup]="profileForm" class="form-group">
-    <label class=" text-black-50 text-uppercase" for="typeahead-http">
-      Search City:
-      <input type="text" formControlName="searchCity" id="typeahead-http" [class.is-invalid]="searchFailed" [(ngModel)]="model" [ngbTypeahead]="search" placeholder="" >
-      <button type="submit" (click)="searchCity()">
-        Search
-      </button>
-    </label>
-  </form>
+  <div class="row">
+    <div class="col-md-12">
+      <form [formGroup]="profileForm" class="form-group">
+        <label class="text-white-50 text-uppercase" for="typeahead-http">
+          Search City:
+          <input type="text" formControlName="searchCity" id="typeahead-http" class="form-control"
+                 [class.is-invalid]="searchFailed"
+                 [(ngModel)]="model" [ngbTypeahead]="search" placeholder="">
+          <button type="submit" class="btn btn-outline-secondary d-inline " (click)="searchCity()">
+            Search
+          </button>
+        </label>
+      </form>
+    </div>
+  </div>
 </div>

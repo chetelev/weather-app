@@ -1,0 +1,23 @@
+.container {
+  background-position: center;
+  background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.container h1 {
+  color: #abe7ff;
+}
+
+.container span {
+  color: #abe7ff;
+}
+
+.container h4 {
+  color: #FFF;
+  text-align: start;
+}
+
+.row {
+  align-items: center;
+  text-align: center;
+}

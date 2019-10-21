@@ -1,14 +1,51 @@
 <div class="container" *ngIf="geoCityData && cities && geoCityImgUrl">
   <app-shared></app-shared>
-  <div class="row ">
-    <div class="col-sm-6 ">
-      <a routerLink="details/{{geoCityData.name}}"
-         class="display-2 text-decoration-none d-inline text-primary">{{geoCityData.name}}</a>
-      <span>{{geoCityData.sys.country}}</span>
+  <div class="row">
+    <div class="col-md-3">
+      <a routerLink="details/{{geoCityData.city.name}}"
+         class="display-1 text-decoration-none d-inline">{{geoCityData.city.name}}</a>
+      <span class="text-white">{{geoCityData.city.country}}</span>
       <span
-        class="display-3 d-block">{{geoCityData.main.temp | number:'1.0-0'}}<span class="text-black-50">&#8451;</span> </span>
+        class="display-2 d-block">{{geoCityData.list[0].main.temp | number:'1.0-0'}}&#8451;</span>
+    </div>
+    <div class="col-md-4 text-white">
+      <h1>{{today | date: 'shortTime'}}</h1>
+      <h2>{{today | date: 'MMM d'}}</h2>
+      <h3>{{today | date: 'EEEE'}} </h3>
+      <img src="http://openweathermap.org/img/wn/{{geoCityData.list[0].weather[0].icon}}@2x.png" alt="">
+      <h4>{{geoCityData.list[0].weather[0].description}} </h4>
+    </div>
+    <div class="col-md-5">
+      <div class="row ">
+        <div class="col-md-8">
+          <h2>{{geoCityData.list[8].dt_txt | date:'EEEE'}}</h2>
+          <h6>{{geoCityData.list[5].main.temp_min | number:'1.0-0'}}&#8451; {{geoCityData.list[8].main.temp_max | number:'1.0-0'}}&#8451;</h6>
+          <h4>{{geoCityData.list[8].weather[0].description}} </h4>
+        </div>
+        <div class="col-md-4">
+          <img src="http://openweathermap.org/img/wn/{{geoCityData.list[8].weather[0].icon}}@2x.png" alt="">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <h2>{{geoCityData.list[16].dt_txt | date:'EEEE'}}</h2>
+          <h6>{{geoCityData.list[12].main.temp_min | number:'1.0-0'}}&#8451; {{geoCityData.list[8].main.temp_max | number:'1.0-0'}}&#8451;</h6>
+          <h4>{{geoCityData.list[16].weather[0].description}} </h4>
+        </div>
+        <div class=" col-md-4">
+          <img src="http://openweathermap.org/img/wn/{{geoCityData.list[16].weather[0].icon}}@2x.png" alt="">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <h2>{{geoCityData.list[24].dt_txt | date:'EEEE'}}</h2>
+          <h6>{{geoCityData.list[20].main.temp_min | number:'1.0-0'}}&#8451; {{geoCityData.list[8].main.temp_max | number:'1.0-0'}}&#8451;</h6>
+          <h4>{{geoCityData.list[24].weather[0].description}} </h4>
+        </div>
+        <div class=" col-md-4">
+          <img src="http://openweathermap.org/img/wn/{{geoCityData.list[24].weather[0].icon}}@2x.png" alt="">
+        </div>
+      </div>
     </div>
   </div>
 </div>
-<app-profile-editor></app-profile-editor>
-

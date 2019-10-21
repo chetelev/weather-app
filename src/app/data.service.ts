@@ -15,7 +15,7 @@ export class DataService {
 
 
   getGeoCity(lat: string, lon: string): Observable<any> {
-    const apiCall = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${this.apiKey}`;
+    const apiCall = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${this.apiKey}`;
     return this.http.get(apiCall);
   }
 

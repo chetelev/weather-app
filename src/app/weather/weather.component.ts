@@ -12,6 +12,7 @@ export class WeatherComponent implements OnInit {
   cities = CITIES;
   geoCityData: any;
   geoCityImgUrl: string;
+  today: number = Date.now();
 
   constructor(private dataService: DataService) {
   }
@@ -26,6 +27,7 @@ export class WeatherComponent implements OnInit {
         this.dataService.getGeoCity(pos.lat, pos.lng)
           .subscribe((val) => {
             this.geoCityData = val;
+            console.log(this.geoCityData);
             this.getImages();
           });
       });
