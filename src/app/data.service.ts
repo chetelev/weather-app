@@ -29,6 +29,7 @@ export class DataService {
     return this.http.get(imgCall);
   }
 
+// convert to observable!
   getPosition(): Promise<any> {
     return new Promise((resolve, reject) => {
       navigator.geolocation.getCurrentPosition(resp => {
@@ -39,5 +40,4 @@ export class DataService {
         });
     });
   }
-
 }

@@ -38,6 +38,7 @@ export class CityService {
 })
 
 export class ProfileEditorComponent implements OnInit {
+  // add validation
   profileForm = new FormGroup({
     searchCity: new FormControl('')
   });
@@ -58,6 +59,7 @@ export class ProfileEditorComponent implements OnInit {
 
   searchCity() {
     this.city = this.profileForm.value.searchCity;
+    // this.profileForm.get('searchCity');
     this.route.navigate([`details/${this.city}`]);
   }
 
